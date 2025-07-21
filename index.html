@@ -1,1 +1,235 @@
-hi
+<!DOCTYPE html>
+<html lang="ko" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>이민재 | 백엔드 개발자 포트폴리오</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f8f9fa; /* 밝은 회색 배경 */
+        }
+        .section {
+            scroll-margin-top: 64px; /* 헤더 높이만큼 스크롤 마진 추가 */
+        }
+        .glassmorphism {
+            background: rgba(255, 255, 255, 0.6);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+    </style>
+</head>
+<body class="text-gray-800">
+
+    <!-- Header -->
+    <header class="bg-white/80 backdrop-blur-sm sticky top-0 z-50 shadow-sm">
+        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="#home" class="text-2xl font-bold text-gray-900">M.J Kim</a>
+            <nav class="hidden md:flex space-x-8">
+                <a href="#about" class="text-gray-600 hover:text-blue-600 transition duration-300">소개</a>
+                <a href="#skills" class="text-gray-600 hover:text-blue-600 transition duration-300">기술 스택</a>
+                <a href="#projects" class="text-gray-600 hover:text-blue-600 transition duration-300">프로젝트</a>
+                <a href="#contact" class="text-gray-600 hover:text-blue-600 transition duration-300">연락처</a>
+            </nav>
+            <button id="mobile-menu-button" class="md:hidden text-gray-700">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="4" x2="20" y1="12" y2="12"/><line x1="4" x2="20" y1="6" y2="6"/><line x1="4" x2="20" y1="18" y2="18"/></svg>
+            </button>
+        </div>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white">
+            <a href="#about" class="block py-2 px-6 text-sm text-gray-700 hover:bg-gray-100">소개</a>
+            <a href="#skills" class="block py-2 px-6 text-sm text-gray-700 hover:bg-gray-100">기술 스택</a>
+            <a href="#projects" class="block py-2 px-6 text-sm text-gray-700 hover:bg-gray-100">프로젝트</a>
+            <a href="#contact" class="block py-2 px-6 text-sm text-gray-700 hover:bg-gray-100">연락처</a>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+        <!-- Hero Section -->
+        <section id="home" class="section min-h-[calc(100vh-64px)] flex items-center bg-white">
+            <div class="container mx-auto px-6 text-center">
+                <img src="https://placehold.co/160x160/E2E8F0/4A5568?text=Profile" alt="프로필 사진" class="w-40 h-40 rounded-full mx-auto mb-6 shadow-lg">
+                <h1 class="text-4xl md:text-6xl font-bold text-gray-900 mb-4">이민재</h1>
+                <p class="text-xl md:text-2xl text-gray-600 mb-8">안정적이고 확장 가능한 시스템을 추구하는 백엔드 개발자</p>
+                <div class="flex justify-center space-x-4">
+                    <a href="#projects" class="bg-blue-600 text-white font-semibold px-8 py-3 rounded-full hover:bg-blue-700 transition duration-300 shadow-md">프로젝트 보기</a>
+                    <a href="https://github.com/your-github-id" target="_blank" class="bg-gray-800 text-white font-semibold px-8 py-3 rounded-full hover:bg-gray-900 transition duration-300 shadow-md">GitHub 방문</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="about" class="section py-20">
+            <div class="container mx-auto px-6">
+                <h2 class="text-3xl font-bold text-center mb-12">소개</h2>
+                <div class="max-w-4xl mx-auto bg-white p-8 md:p-12 rounded-xl shadow-lg flex flex-col md:flex-row items-center gap-8">
+                    <div class="md:w-1/3 text-center">
+                        <img src="https://placehold.co/200x200/E2E8F0/4A5568?text=Me" alt="내 사진" class="w-48 h-48 rounded-full mx-auto shadow-md">
+                    </div>
+                    <div class="md:w-2/3">
+                        <p class="text-lg text-gray-700 mb-4">
+                            안녕하세요. 사용자의 요구사항을 안정적인 코드로 구현하고, 비즈니스의 성장에 기여하는 백엔드 개발자 이민재입니다. 
+                            Java와 Spring Boot를 기반으로 한 웹 애플리케이션 개발에 깊은 흥미를 느끼고 있습니다.
+                        </p>
+                        <p class="text-gray-700 mb-4">
+                            단순히 기능을 구현하는 것을 넘어, 대용량 트래픽 처리, 시스템 아키텍처 설계, 코드 품질 개선 등 기술적인 도전을 즐깁니다. 
+                            최근 정보처리기사 자격증을 취득하며 CS 기본 지식을 공고히 다졌으며, 이를 바탕으로 더 깊이 있는 개발자가 되기 위해 꾸준히 학습하고 있습니다.
+                        </p>
+                        <p class="text-gray-700">
+                            팀원들과의 원활한 소통과 협업을 중요하게 생각하며, 기술 블로그 운영을 통해 학습한 내용을 기록하고 공유하는 것을 좋아합니다.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Skills Section -->
+        <section id="skills" class="section py-20 bg-white">
+            <div class="container mx-auto px-6">
+                <h2 class="text-3xl font-bold text-center mb-12">기술 스택</h2>
+                <div class="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- Core Skills -->
+                    <div class="bg-gray-50 p-6 rounded-lg shadow-sm">
+                        <h3 class="text-xl font-semibold mb-4 text-gray-800">핵심 기술 (Core)</h3>
+                        <ul class="space-y-3 text-gray-600">
+                            <li class="flex items-center"><span class="bg-blue-100 text-blue-800 text-xs font-semibold mr-2 px-2.5 py-0.5 rounded-full">Java</span> - 객체지향 프로그래밍에 대한 깊은 이해</li>
+                            <li class="flex items-center"><span class="bg-green-100 text-green-800 text-xs font-semibold mr-2 px-2.5 py-0.5 rounded-full">Spring Boot</span> - RESTful API 개발 및 MVC 패턴 활용</li>
+                            <li class="flex items-center"><span class="bg-yellow-100 text-yellow-800 text-xs font-semibold mr-2 px-2.5 py-0.5 rounded-full">JPA / Hibernate</span> - ORM을 활용한 데이터 영속성 관리</li>
+                            <li class="flex items-center"><span class="bg-indigo-100 text-indigo-800 text-xs font-semibold mr-2 px-2.5 py-0.5 rounded-full">SQL</span> - MySQL, PostgreSQL 기반의 쿼리 작성 및 최적화</li>
+                             <li class="flex items-center"><span class="bg-purple-100 text-purple-800 text-xs font-semibold mr-2 px-2.5 py-0.5 rounded-full">Spring Security</span> - JWT 기반 인증/인가 구현</li>
+                        </ul>
+                    </div>
+                    <!-- Differentiators -->
+                    <div class="bg-gray-50 p-6 rounded-lg shadow-sm">
+                        <h3 class="text-xl font-semibold mb-4 text-gray-800">심화/우대 기술 (Advanced)</h3>
+                        <ul class="space-y-3 text-gray-600">
+                            <li class="flex items-center"><span class="bg-red-100 text-red-800 text-xs font-semibold mr-2 px-2.5 py-0.5 rounded-full">Redis</span> - 캐싱을 통한 성능 개선 경험</li>
+                            <li class="flex items-center"><span class="bg-gray-200 text-gray-800 text-xs font-semibold mr-2 px-2.5 py-0.5 rounded-full">Kafka</span> - 비동기 메시지 큐를 이용한 시스템 설계</li>
+                            <li class="flex items-center"><span class="bg-blue-100 text-blue-800 text-xs font-semibold mr-2 px-2.5 py-0.5 rounded-full">Docker</span> - 컨테이너 기반 애플리케이션 배포 경험</li>
+                            <li class="flex items-center"><span class="bg-orange-100 text-orange-800 text-xs font-semibold mr-2 px-2.5 py-0.5 rounded-full">AWS</span> - EC2, RDS, S3 등 기본 서비스 사용 경험</li>
+                        </ul>
+                    </div>
+                    <!-- Tools & Collaboration -->
+                    <div class="bg-gray-50 p-6 rounded-lg shadow-sm">
+                        <h3 class="text-xl font-semibold mb-4 text-gray-800">도구 및 협업 (Tools)</h3>
+                        <ul class="space-y-3 text-gray-600">
+                            <li class="flex items-center"><span class="bg-gray-800 text-white text-xs font-semibold mr-2 px-2.5 py-0.5 rounded-full">Git & GitHub</span> - 버전 관리 및 협업</li>
+                            <li class="flex items-center"><span class="bg-yellow-500 text-white text-xs font-semibold mr-2 px-2.5 py-0.5 rounded-full">Jenkins</span> - CI/CD 파이프라인 구축 경험</li>
+                             <li class="flex items-center"><span class="bg-blue-500 text-white text-xs font-semibold mr-2 px-2.5 py-0.5 rounded-full">IntelliJ</span> - 주력 개발 IDE</li>
+                            <li class="flex items-center"><span class="bg-purple-500 text-white text-xs font-semibold mr-2 px-2.5 py-0.5 rounded-full">Slack / Notion</span> - 원활한 커뮤니케이션 및 문서화</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Projects Section -->
+        <section id="projects" class="section py-20">
+            <div class="container mx-auto px-6">
+                <h2 class="text-3xl font-bold text-center mb-12">프로젝트</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-10">
+
+                    <!-- Project 1 -->
+                    <div class="bg-white rounded-xl shadow-lg overflow-hidden transform hover:-translate-y-2 transition duration-300">
+                        <img src="https://placehold.co/600x400/3B82F6/FFFFFF?text=E-commerce+Project" alt="이커머스 프로젝트 이미지" class="w-full h-56 object-cover">
+                        <div class="p-6">
+                            <h3 class="text-2xl font-bold mb-2">비동기 주문 처리 이커머스</h3>
+                            <p class="text-gray-600 mb-4">대규모 주문 트래픽을 안정적으로 처리하기 위한 백엔드 시스템</p>
+                            <div class="mb-4">
+                                <span class="inline-block bg-blue-100 text-blue-800 text-sm font-semibold mr-2 mb-2 px-3 py-1 rounded-full">Spring Boot</span>
+                                <span class="inline-block bg-gray-200 text-gray-800 text-sm font-semibold mr-2 mb-2 px-3 py-1 rounded-full">Kafka</span>
+                                <span class="inline-block bg-red-100 text-red-800 text-sm font-semibold mr-2 mb-2 px-3 py-1 rounded-full">Redis</span>
+                                <span class="inline-block bg-yellow-100 text-yellow-800 text-sm font-semibold mr-2 mb-2 px-3 py-1 rounded-full">JPA</span>
+                                <span class="inline-block bg-blue-100 text-blue-800 text-sm font-semibold mr-2 mb-2 px-3 py-1 rounded-full">Docker</span>
+                            </div>
+                            <ul class="list-disc list-inside text-gray-700 space-y-2 mb-6">
+                                <li><b>Kafka 메시지 큐</b>를 도입하여 주문 요청을 비동기적으로 처리, 시스템 부하 분산 및 안정성 확보</li>
+                                <li><b>Redis</b>를 활용한 상품 정보 캐싱으로 API 응답 속도 40% 개선</li>
+                                <li><b>Spring Security와 JWT</b>를 이용한 안전한 인증/인가 시스템 구현</li>
+                                <li><b>Docker</b>를 통해 개발 환경을 컨테이너화하여 배포 일관성 유지</li>
+                            </ul>
+                            <div class="flex justify-end space-x-4">
+                                <a href="https://github.com/your-github-id/ecommerce-project" target="_blank" class="text-gray-700 hover:text-blue-600 font-semibold transition duration-300">GitHub Repository</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Project 2 -->
+                    <div class="bg-white rounded-xl shadow-lg overflow-hidden transform hover:-translate-y-2 transition duration-300">
+                        <img src="https://placehold.co/600x400/10B981/FFFFFF?text=Chat+Project" alt="채팅 프로젝트 이미지" class="w-full h-56 object-cover">
+                        <div class="p-6">
+                            <h3 class="text-2xl font-bold mb-2">실시간 채팅 애플리케이션</h3>
+                            <p class="text-gray-600 mb-4">WebSocket 기반의 다자간 실시간 채팅 서비스</p>
+                            <div class="mb-4">
+                                <span class="inline-block bg-green-100 text-green-800 text-sm font-semibold mr-2 mb-2 px-3 py-1 rounded-full">Spring Boot</span>
+                                <span class="inline-block bg-purple-100 text-purple-800 text-sm font-semibold mr-2 mb-2 px-3 py-1 rounded-full">WebSocket</span>
+                                <span class="inline-block bg-red-100 text-red-800 text-sm font-semibold mr-2 mb-2 px-3 py-1 rounded-full">Redis (Pub/Sub)</span>
+                                <span class="inline-block bg-blue-100 text-blue-800 text-sm font-semibold mr-2 mb-2 px-3 py-1 rounded-full">Docker</span>
+                            </div>
+                            <ul class="list-disc list-inside text-gray-700 space-y-2 mb-6">
+                                <li><b>WebSocket과 STOMP 프로토콜</b>을 사용하여 실시간 양방향 통신 구현</li>
+                                <li><b>Redis Pub/Sub</b> 모델을 활용하여 여러 채팅 서버 인스턴스 간 메시지 브로커링 구현, 수평적 확장성 확보</li>
+                                <li>채팅방 생성, 참여, 메시지 전송 등 핵심 기능 API 개발</li>
+                                <li><b>Nginx</b>를 이용한 WebSocket 연결 리버스 프록시 설정</li>
+                            </ul>
+                            <div class="flex justify-end space-x-4">
+                                <a href="https://github.com/your-github-id/chat-project" target="_blank" class="text-gray-700 hover:text-blue-600 font-semibold transition duration-300">GitHub Repository</a>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="section py-20 bg-gray-800 text-white">
+            <div class="container mx-auto px-6 text-center">
+                <h2 class="text-3xl font-bold mb-4">연락처</h2>
+                <p class="text-gray-300 mb-8 max-w-2xl mx-auto">새로운 기회에 항상 열려있습니다. 함께 성장할 수 있는 좋은 인연을 기다립니다.</p>
+                <div class="flex justify-center items-center space-x-8">
+                    <a href="mailto:your-email@example.com" class="flex flex-col items-center text-gray-300 hover:text-white transition duration-300">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                        <span class="mt-2 text-sm">Email</span>
+                    </a>
+                    <a href="https://github.com/your-github-id" target="_blank" class="flex flex-col items-center text-gray-300 hover:text-white transition duration-300">
+                         <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+                        <span class="mt-2 text-sm">GitHub</span>
+                    </a>
+                    <a href="https://your-blog.tistory.com" target="_blank" class="flex flex-col items-center text-gray-300 hover:text-white transition duration-300">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 7.5A2.5 2.5 0 0 1 6.5 5H18a2 2 0 0 1 2 2v8.5a2.5 2.5 0 0 1-2.5 2.5h-10A2.5 2.5 0 0 1 3 15.5V10a1 1 0 0 1 1-1Z"/><path d="M14 14v-4h-4v4"/></svg>
+                        <span class="mt-2 text-sm">Blog</span>
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-white py-6">
+        <div class="container mx-auto px-6 text-center text-gray-500">
+            <p>&copy; 2025 Minjun Kim. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Close mobile menu when a link is clicked
+        document.querySelectorAll('#mobile-menu a').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
+    </script>
+</body>
+</html>
