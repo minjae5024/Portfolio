@@ -9,8 +9,8 @@
     <style>
         body {
             font-family: 'Noto Sans KR', 'Inter', sans-serif;
-            background-color: #111827;
-            color: #D1D5DB;
+            background-color: #F5EFE6;
+            color: #334155;
         }
         .section {
             scroll-margin-top: 80px; 
@@ -19,101 +19,102 @@
             width: 8px;
         }
         ::-webkit-scrollbar-track {
-            background: #1F2937;
+            background: #E8DFCA;
         }
         ::-webkit-scrollbar-thumb {
-            background: #4B5563;
+            background: #6D94C5;
             border-radius: 4px;
         }
         ::-webkit-scrollbar-thumb:hover {
-            background: #6B7280;
+            background: #5a7aa1;
         }
-        .text-gradient {
-            background: linear-gradient(to right, #38bdf8, #a78bfa);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
+        .bg-custom-primary { background-color: #F5EFE6; }
+        .bg-custom-secondary { background-color: #E8DFCA; }
+        .bg-custom-accent { background-color: #6D94C5; }
+        .text-custom-accent { color: #6D94C5; }
+        .border-custom-accent { border-color: #6D94C5; }
+        .hover\:bg-custom-accent-dark:hover { background-color: #5a7aa1; }
     </style>
 </head>
 <body class="antialiased">
 
-    <header class="bg-gray-900/80 backdrop-blur-sm sticky top-0 z-50 border-b border-gray-700">
+    <header class="bg-[#F5EFE6]/80 backdrop-blur-sm sticky top-0 z-50 border-b border-slate-200">
         <div class="container mx-auto px-6 py-4 flex justify-between items-center">
-            <a href="#home" class="text-lg font-bold text-white tracking-wider">Lee Minjae's Portfolio</a>
+            <a href="#home" class="text-lg font-bold text-slate-800 tracking-wider">Lee Minjae's Portfolio</a>
             <nav class="hidden md:flex space-x-8">
-                <a href="#about" class="text-gray-300 hover:text-sky-400 transition duration-300">About</a>
-                <a href="#skills" class="text-gray-300 hover:text-sky-400 transition duration-300">Skills</a>
-                <a href="#projects" class="text-gray-300 hover:text-sky-400 transition duration-300">Projects</a>
-                <a href="#contact" class="text-gray-300 hover:text-sky-400 transition duration-300">Contact</a>
+                <a href="#about" class="text-slate-600 hover:text-[#6D94C5] transition duration-300">About</a>
+                <a href="#skills" class="text-slate-600 hover:text-[#6D94C5] transition duration-300">Skills</a>
+                <a href="#projects" class="text-slate-600 hover:text-[#6D94C5] transition duration-300">Projects</a>
+                <a href="#contact" class="text-slate-600 hover:text-[#6D94C5] transition duration-300">Contact</a>
             </nav>
-            <button id="mobile-menu-button" class="md:hidden text-white">
+            <button id="mobile-menu-button" class="md:hidden text-slate-800">
                 <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
                 </svg>
             </button>
         </div>
-        <div id="mobile-menu" class="md:hidden hidden bg-gray-900">
-            <a href="#about" class="block py-2 px-6 text-gray-300 hover:bg-gray-800">About</a>
-            <a href="#skills" class="block py-2 px-6 text-gray-300 hover:bg-gray-800">Skills</a>
-            <a href="#projects" class="block py-2 px-6 text-gray-300 hover:bg-gray-800">Projects</a>
-            <a href="#contact" class="block py-2 px-6 text-gray-300 hover:bg-gray-800">Contact</a>
+        <div id="mobile-menu" class="md:hidden hidden bg-[#F5EFE6]">
+            <a href="#about" class="block py-2 px-6 text-slate-600 hover:bg-slate-100">About</a>
+            <a href="#skills" class="block py-2 px-6 text-slate-600 hover:bg-slate-100">Skills</a>
+            <a href="#projects" class="block py-2 px-6 text-slate-600 hover:bg-slate-100">Projects</a>
+            <a href="#contact" class="block py-2 px-6 text-slate-600 hover:bg-slate-100">Contact</a>
         </div>
     </header>
 
     <main>
         <section id="home" class="section container mx-auto px-6 py-24 md:py-32 flex flex-col md:flex-row items-center justify-center text-center">
             <div class="md:w-3/4">
-                <h1 class="text-5xl md:text-7xl font-bold text-white leading-tight mb-4 text-gradient">
+                <h1 class="text-5xl md:text-7xl font-bold text-slate-800 leading-tight mb-4">
                     이민재
                 </h1>
-                <p class="text-xl md:text-2xl text-gray-400 max-w-3xl mx-auto mt-6">
+                <p class="text-xl md:text-2xl text-slate-600 max-w-3xl mx-auto mt-6">
                     백엔드 개발자
                 </p>
                 <div class="mt-8 flex justify-center gap-4">
-                    <a href="https://github.com/minjae5024" target="_blank" class="bg-sky-500 text-white font-semibold py-3 px-8 rounded-lg hover:bg-sky-600 transition duration-300">
+                    <a href="https://github.com/minjae5024" target="_blank" class="bg-custom-accent text-white font-semibold py-3 px-8 rounded-lg hover:bg-custom-accent-dark transition duration-300">
                         GitHub
                     </a>
-                    <a href="#projects" class="bg-gray-700 text-white font-semibold py-3 px-8 rounded-lg hover:bg-gray-600 transition duration-300">
+                    <a href="#projects" class="bg-transparent border border-custom-accent text-custom-accent font-semibold py-3 px-8 rounded-lg hover:bg-custom-accent hover:text-white transition duration-300">
                         프로젝트
                     </a>
                 </div>
             </div>
         </section>
 
-        <section id="about" class="section bg-gray-900 py-20 md:py-24">
+        <section id="about" class="section bg-custom-secondary py-20 md:py-24">
             <div class="container mx-auto px-6">
-                <h2 class="text-3xl md:text-4xl font-bold text-white text-center mb-12">ABOUT ME</h2>
-                <div class="max-w-4xl mx-auto bg-gray-800 rounded-xl shadow-lg p-8 md:p-10">
+                <h2 class="text-3xl md:text-4xl font-bold text-slate-800 text-center mb-12">ABOUT ME</h2>
+                <div class="max-w-4xl mx-auto bg-[#F5EFE6] rounded-xl shadow-lg p-8 md:p-10">
                     <div class="grid md:grid-cols-3 gap-8">
                         <div class="md:col-span-2">
-                            <h3 class="text-2xl font-bold text-white mb-4">이민재 | Lee Minjae</h3>
-                            <p class="text-gray-300 mb-6">
+                            <h3 class="text-2xl font-bold text-slate-800 mb-4">이민재 | Lee Minjae</h3>
+                            <p class="text-slate-600 mb-6">
                                 기술의 발전으로 AI가 신입 개발자를 대체하고 있는 지금, 코드를 이해하고 개선할 수 있는 '문제 해결 능력'이야말로 개발자의 핵심 역량이라고 생각합니다. 저는 단순히 기술을 사용하는 것을 넘어, 코드의 설계 구조와 동작 원리를 이해해 문제가 생긴 이유를 찾을 수 있는 개발자가 되기위해 노력해왔습니다. 새로운 기술의 근본 원리를 이해하며 트렌드에 발맞춰갈 수 있는 백엔드 개발자가 되고 싶습니다.
                             </p>
-                            <div class="space-y-4 text-gray-300">
+                            <div class="space-y-4 text-slate-600">
                                 <div class="flex items-center">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-5 h-5 mr-3 text-sky-400"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-5 h-5 mr-3 text-custom-accent"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
                                     <span>minjae5024@naver.com</span>
                                 </div>
                                 <div class="flex items-center">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-5 h-5 mr-3 text-sky-400"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-5 h-5 mr-3 text-custom-accent"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
                                     <span>010-4792-7581</span>
                                 </div>
                             </div>
                         </div>
                         <div>
-                            <h4 class="text-xl font-semibold text-white mb-4">자격증</h4>
-                            <ul class="space-y-3 text-gray-300">
+                            <h4 class="text-xl font-semibold text-slate-800 mb-4">자격증</h4>
+                            <ul class="space-y-3 text-slate-600">
                                 <li class="flex items-start">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-5 h-5 mr-3 text-sky-400 mt-1 flex-shrink-0"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-5 h-5 mr-3 text-custom-accent mt-1 flex-shrink-0"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
                                     <span>정보처리기사</span>
                                 </li>
                                 <li class="flex items-start">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-5 h-5 mr-3 text-sky-400 mt-1 flex-shrink-0"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-5 h-5 mr-3 text-custom-accent mt-1 flex-shrink-0"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
                                     <span>멀티미디어콘텐츠제작전문가</span>
                                 </li>
                                 <li class="flex items-start">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-5 h-5 mr-3 text-sky-400 mt-1 flex-shrink-0"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-5 h-5 mr-3 text-custom-accent mt-1 flex-shrink-0"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
                                     <span>네트워크관리사 2급</span>
                                 </li>
                             </ul>
@@ -124,53 +125,53 @@
         </section>
 
         <section id="skills" class="section container mx-auto px-6 py-20 md:py-24">
-            <h2 class="text-3xl md:text-4xl font-bold text-white text-center mb-12">SKILLS</h2>
+            <h2 class="text-3xl md:text-4xl font-bold text-slate-800 text-center mb-12">SKILLS</h2>
             <div class="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <div class="bg-gray-800 p-6 rounded-lg">
-                    <h3 class="text-xl font-bold text-white mb-4">Backend</h3>
+                <div class="bg-white p-6 rounded-lg shadow-md">
+                    <h3 class="text-xl font-bold text-slate-800 mb-4">Backend</h3>
                     <div class="flex flex-wrap gap-2">
-                        <span class="bg-sky-900/50 text-sky-300 text-sm font-medium px-3 py-1 rounded-full">Java</span>
-                        <span class="bg-sky-900/50 text-sky-300 text-sm font-medium px-3 py-1 rounded-full">Spring Framework</span>
-                        <span class="bg-sky-900/50 text-sky-300 text-sm font-medium px-3 py-1 rounded-full">Spring Boot</span>
+                        <span class="bg-[#CBDCEB] text-[#6D94C5] text-sm font-semibold px-3 py-1 rounded-full">Java</span>
+                        <span class="bg-[#CBDCEB] text-[#6D94C5] text-sm font-semibold px-3 py-1 rounded-full">Spring Framework</span>
+                        <span class="bg-[#CBDCEB] text-[#6D94C5] text-sm font-semibold px-3 py-1 rounded-full">Spring Boot</span>
                     </div>
                 </div>
-                <div class="bg-gray-800 p-6 rounded-lg">
-                    <h3 class="text-xl font-bold text-white mb-4">Database</h3>
+                <div class="bg-white p-6 rounded-lg shadow-md">
+                    <h3 class="text-xl font-bold text-slate-800 mb-4">Database</h3>
                     <div class="flex flex-wrap gap-2">
-                        <span class="bg-emerald-900/50 text-emerald-300 text-sm font-medium px-3 py-1 rounded-full">MySQL</span>
-                        <span class="bg-emerald-900/50 text-emerald-300 text-sm font-medium px-3 py-1 rounded-full">JPA</span>
-                        <span class="bg-emerald-900/50 text-emerald-300 text-sm font-medium px-3 py-1 rounded-full">QueryDSL</span>
+                        <span class="bg-[#CBDCEB] text-[#6D94C5] text-sm font-semibold px-3 py-1 rounded-full">MySQL</span>
+                        <span class="bg-[#CBDCEB] text-[#6D94C5] text-sm font-semibold px-3 py-1 rounded-full">JPA</span>
+                        <span class="bg-[#CBDCEB] text-[#6D94C5] text-sm font-semibold px-3 py-1 rounded-full">QueryDSL</span>
                     </div>
                 </div>
-                <div class="bg-gray-800 p-6 rounded-lg">
-                    <h3 class="text-xl font-bold text-white mb-4">DevOps</h3>
+                <div class="bg-white p-6 rounded-lg shadow-md">
+                    <h3 class="text-xl font-bold text-slate-800 mb-4">DevOps</h3>
                     <div class="flex flex-wrap gap-2">
-                         <span class="bg-indigo-900/50 text-indigo-300 text-sm font-medium px-3 py-1 rounded-full">Git</span>
-                         <span class="bg-indigo-900/50 text-indigo-300 text-sm font-medium px-3 py-1 rounded-full">Docker</span>
-                         <span class="bg-indigo-900/50 text-indigo-300 text-sm font-medium px-3 py-1 rounded-full">GitHub Actions</span>
-                         <span class="bg-indigo-900/50 text-indigo-300 text-sm font-medium px-3 py-1 rounded-full">AWS EC2</span>
-                         <span class="bg-indigo-900/50 text-indigo-300 text-sm font-medium px-3 py-1 rounded-full">AWS RDS</span>
-                         <span class="bg-indigo-900/50 text-indigo-300 text-sm font-medium px-3 py-1 rounded-full">GCP</span>
+                         <span class="bg-[#CBDCEB] text-[#6D94C5] text-sm font-semibold px-3 py-1 rounded-full">Git</span>
+                         <span class="bg-[#CBDCEB] text-[#6D94C5] text-sm font-semibold px-3 py-1 rounded-full">Docker</span>
+                         <span class="bg-[#CBDCEB] text-[#6D94C5] text-sm font-semibold px-3 py-1 rounded-full">GitHub Actions</span>
+                         <span class="bg-[#CBDCEB] text-[#6D94C5] text-sm font-semibold px-3 py-1 rounded-full">AWS EC2</span>
+                         <span class="bg-[#CBDCEB] text-[#6D94C5] text-sm font-semibold px-3 py-1 rounded-full">AWS RDS</span>
+                         <span class="bg-[#CBDCEB] text-[#6D94C5] text-sm font-semibold px-3 py-1 rounded-full">GCP</span>
                     </div>
                 </div>
             </div>
         </section>
 
-        <section id="projects" class="section bg-gray-900 py-20 md:py-24">
+        <section id="projects" class="section bg-custom-secondary py-20 md:py-24">
             <div class="container mx-auto px-6">
-                <h2 class="text-3xl md:text-4xl font-bold text-white text-center mb-12">PROJECTS</h2>
+                <h2 class="text-3xl md:text-4xl font-bold text-slate-800 text-center mb-12">PROJECTS</h2>
                 <div class="grid grid-cols-1 lg:grid-cols-2 gap-10">
                     
-                    <div class="bg-gray-800 rounded-xl shadow-lg overflow-hidden transform hover:-translate-y-2 transition-transform duration-300 flex flex-col">
+                    <div class="bg-[#F5EFE6] rounded-xl shadow-lg overflow-hidden transform hover:-translate-y-2 transition-transform duration-300 flex flex-col">
                         <div class="p-8 flex flex-col flex-grow">
                             <div>
-                                <h3 class="text-2xl font-bold text-white mb-2">농산물 가격 조회 및 커뮤니티</h3>
-                                 <p class="text-gray-400 mb-6">
+                                <h3 class="text-2xl font-bold text-slate-800 mb-2">농산물 가격 조회 및 커뮤니티</h3>
+                                 <p class="text-slate-600 mb-6">
                                     공공데이터 API를 활용하여 전국의 농산물 도매 가격 정보를 조회하고, 사용자들끼리 소통할 수 있는 커뮤니티 서비스입니다.
                                 </p>
                                 <div class="mb-6">
-                                    <h4 class="font-semibold text-white mb-2">주요 기능</h4>
-                                    <ul class="list-disc list-inside text-gray-400 space-y-1">
+                                    <h4 class="font-semibold text-slate-800 mb-2">주요 기능</h4>
+                                    <ul class="list-disc list-inside text-slate-600 space-y-1">
                                         <li>공공데이터 API 연동 및 데이터베이스 저장</li>
                                         <li>QueryDSL을 이용한 조건 동적 검색 기능</li>
                                         <li>지도 API 기반 시장 선택 및 가격 조회</li>
@@ -180,41 +181,41 @@
                             </div>
                             <div class="mt-auto pt-6">
                                 <div class="mb-6">
-                                    <h4 class="font-semibold text-white mb-2">적용 기술</h4>
+                                    <h4 class="font-semibold text-slate-800 mb-2">적용 기술</h4>
                                     <div class="flex flex-wrap gap-2">
-                                        <span class="bg-gray-700 text-gray-300 text-xs font-medium px-2.5 py-0.5 rounded-full">JAVA</span>
-                                        <span class="bg-gray-700 text-gray-300 text-xs font-medium px-2.5 py-0.5 rounded-full">Spring Boot</span>
-                                        <span class="bg-gray-700 text-gray-300 text-xs font-medium px-2.5 py-0.5 rounded-full">JPA</span>
-                                        <span class="bg-gray-700 text-gray-300 text-xs font-medium px-2.5 py-0.5 rounded-full">QueryDSL</span>
-                                        <span class="bg-gray-700 text-gray-300 text-xs font-medium px-2.5 py-0.5 rounded-full">MySQL</span>
-                                        <span class="bg-gray-700 text-gray-300 text-xs font-medium px-2.5 py-0.5 rounded-full">AWS EC2/RDS</span>
-                                        <span class="bg-gray-700 text-gray-300 text-xs font-medium px-2.5 py-0.5 rounded-full">GitHub Actions</span>
+                                        <span class="bg-slate-200 text-slate-700 text-xs font-medium px-2.5 py-0.5 rounded-full">JAVA</span>
+                                        <span class="bg-slate-200 text-slate-700 text-xs font-medium px-2.5 py-0.5 rounded-full">Spring Boot</span>
+                                        <span class="bg-slate-200 text-slate-700 text-xs font-medium px-2.5 py-0.5 rounded-full">JPA</span>
+                                        <span class="bg-slate-200 text-slate-700 text-xs font-medium px-2.5 py-0.5 rounded-full">QueryDSL</span>
+                                        <span class="bg-slate-200 text-slate-700 text-xs font-medium px-2.5 py-0.5 rounded-full">MySQL</span>
+                                        <span class="bg-slate-200 text-slate-700 text-xs font-medium px-2.5 py-0.5 rounded-full">AWS EC2/RDS</span>
+                                        <span class="bg-slate-200 text-slate-700 text-xs font-medium px-2.5 py-0.5 rounded-full">GitHub Actions</span>
                                     </div>
                                 </div>
-                                <div class="bg-gray-900 p-4 rounded-lg">
-                                    <ul class="list-disc list-inside text-gray-400 space-y-1 text-sm">
+                                <div class="bg-[#CBDCEB]/50 p-4 rounded-lg">
+                                    <ul class="list-disc list-inside text-slate-600 space-y-1 text-sm">
                                         <li><b>쿼리 성능 최적화</b>: 게시글 조회 시 발생한 N+1 문제를 직접 발견하고, Fetch Join을 적용하여 불필요한 쿼리를 제거함으로써 API 응답 속도를 개선했습니다.</li>
                                         <li><b>개발 생산성 향상</b>: GitHub Actions를 활용해 테스트, 빌드, 배포 자동화(CI/CD) 파이프라인을 구축하여 반복 작업을 줄이고 개발 효율성을 높였습니다.</li>
                                         <li><b>인프라 안정성 확보</b>: EC2의 메모리 부족 문제를 진단하고, 데이터베이스를 AWS RDS로 분리하여 서버 다운 문제를 근본적으로 해결했습니다.</li>
                                     </ul>
                                 </div>
                                 <div class="mt-8 flex gap-4">
-                                    <a href="https://github.com/minjae5024/marketPrice" target="_blank" class="w-full text-center bg-gray-700 text-white font-semibold py-2 px-4 rounded-lg hover:bg-gray-600 transition duration-300">GitHub Repository</a>
+                                    <a href="https://github.com/minjae5024/marketPrice" target="_blank" class="w-full text-center bg-custom-accent text-white font-semibold py-2 px-4 rounded-lg hover:bg-custom-accent-dark transition duration-300">GitHub Repository</a>
                                 </div>
                             </div>
                         </div>
                     </div>
 
-                    <div class="bg-gray-800 rounded-xl shadow-lg overflow-hidden transform hover:-translate-y-2 transition-transform duration-300 flex flex-col">
+                    <div class="bg-[#F5EFE6] rounded-xl shadow-lg overflow-hidden transform hover:-translate-y-2 transition-transform duration-300 flex flex-col">
                         <div class="p-8 flex flex-col flex-grow">
                             <div>
-                                <h3 class="text-2xl font-bold text-white mb-2">이커머스 API 서버</h3>
-                                <p class="text-gray-400 mb-6">
+                                <h3 class="text-2xl font-bold text-slate-800 mb-2">이커머스 API 서버</h3>
+                                <p class="text-slate-600 mb-6">
                                     사용자 인증, 상품 관리, 장바구니, 주문, 결제 등 실제 서비스의 확장성과 안정성을 목표로 설계한 이커머스 API 서버입니다.
                                 </p>
                                 <div class="mb-6">
-                                    <h4 class="font-semibold text-white mb-2">주요 기능</h4>
-                                    <ul class="list-disc list-inside text-gray-400 space-y-1">
+                                    <h4 class="font-semibold text-slate-800 mb-2">주요 기능</h4>
+                                    <ul class="list-disc list-inside text-slate-600 space-y-1">
                                         <li>동시성 제어를 적용한 재고 관리 시스템</li>
                                         <li>JWT & Spring Security 기반 인증/인가</li>
                                         <li>관리자(Admin) 권한 분리를 통한 상품 관리</li>
@@ -224,25 +225,25 @@
                             </div>
                              <div class="mt-auto pt-6">
                                 <div class="mb-6">
-                                    <h4 class="font-semibold text-white mb-2">적용 기술</h4>
+                                    <h4 class="font-semibold text-slate-800 mb-2">적용 기술</h4>
                                     <div class="flex flex-wrap gap-2">
-                                        <span class="bg-gray-700 text-gray-300 text-xs font-medium px-2.5 py-0.5 rounded-full">JAVA</span>
-                                        <span class="bg-gray-700 text-gray-300 text-xs font-medium px-2.5 py-0.5 rounded-full">Spring Boot</span>
-                                        <span class="bg-gray-700 text-gray-300 text-xs font-medium px-2.5 py-0.5 rounded-full">JPA</span>
-                                        <span class="bg-gray-700 text-gray-300 text-xs font-medium px-2.5 py-0.5 rounded-full">MySQL</span>
-                                        <span class="bg-gray-700 text-gray-300 text-xs font-medium px-2.5 py-0.5 rounded-full">AWS EC2/RDS</span>
-                                        <span class="bg-gray-700 text-gray-300 text-xs font-medium px-2.5 py-0.5 rounded-full">GitHub Actions</span>
+                                        <span class="bg-slate-200 text-slate-700 text-xs font-medium px-2.5 py-0.5 rounded-full">JAVA</span>
+                                        <span class="bg-slate-200 text-slate-700 text-xs font-medium px-2.5 py-0.5 rounded-full">Spring Boot</span>
+                                        <span class="bg-slate-200 text-slate-700 text-xs font-medium px-2.5 py-0.5 rounded-full">JPA</span>
+                                        <span class="bg-slate-200 text-slate-700 text-xs font-medium px-2.5 py-0.5 rounded-full">MySQL</span>
+                                        <span class="bg-slate-200 text-slate-700 text-xs font-medium px-2.5 py-0.5 rounded-full">AWS EC2/RDS</span>
+                                        <span class="bg-slate-200 text-slate-700 text-xs font-medium px-2.5 py-0.5 rounded-full">GitHub Actions</span>
                                     </div>
                                 </div>
-                                <div class="bg-gray-900 p-4 rounded-lg">
-                                    <ul class="list-disc list-inside text-gray-400 space-y-1 text-sm">
+                                <div class="bg-[#CBDCEB]/50 p-4 rounded-lg">
+                                    <ul class="list-disc list-inside text-slate-600 space-y-1 text-sm">
                                         <li><b>동시성 제어</b>: 다수의 동시 주문 상황에서 발생할 수 있는 재고 데이터의 불일치 문제를 해결하기 위해 비관적 락(Pessimistic Lock)을 적용했습니다. 이를 통해 어떤 상황에서도 데이터의 정합성을 보장했습니다.</li>
                                         <li><b>데이터 무결성</b>: `@Transactional`을 적용하여 주문/결제 프로세스에서 데이터의 일관성을 보장했습니다.</li>
                                         <li><b>객체지향 설계</b>: 도메인 객체가 핵심 비즈니스 로직을 갖도록 설계하여 서비스 계층의 복잡도를 낮추고 코드의 응집도를 높였습니다.</li>
                                     </ul>
                                 </div>
                                 <div class="mt-8 flex gap-4">
-                                    <a href="https://github.com/minjae5024/E-Commerce" target="_blank" class="w-full text-center bg-gray-700 text-white font-semibold py-2 px-4 rounded-lg hover:bg-gray-600 transition duration-300">GitHub Repository</a>
+                                    <a href="https://github.com/minjae5024/E-Commerce" target="_blank" class="w-full text-center bg-custom-accent text-white font-semibold py-2 px-4 rounded-lg hover:bg-custom-accent-dark transition duration-300">GitHub Repository</a>
                                 </div>
                             </div>
                         </div>
@@ -252,27 +253,27 @@
         </section>
 
         <section id="contact" class="section container mx-auto px-6 py-20 md:py-24 text-center">
-            <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">CONTACT</h2>
-            <p class="text-gray-400 text-lg mb-8">항상 연락을 기다리고 있어요!</p>
+            <h2 class="text-3xl md:text-4xl font-bold text-slate-800 mb-4">CONTACT</h2>
+            <p class="text-slate-600 text-lg mb-8">항상 연락을 기다리고 있어요!</p>
             <div class="flex justify-center items-start flex-wrap gap-2">
-                 <div class="flex flex-col items-center text-gray-300 w-40">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mb-2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+                 <div class="flex flex-col items-center text-slate-600 w-40">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mb-2 text-[#6D94C5]"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
                     <span class="text-sm break-all">minjae5024@naver.com</span>
                 </div>
-                <div class="flex flex-col items-center text-gray-300 w-40">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mb-2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+                <div class="flex flex-col items-center text-slate-600 w-40">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mb-2 text-[#6D94C5]"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
                     <span class="text-sm">010-4792-7581</span>
                 </div>
-                <a href="https://github.com/minjae5024" target="_blank" class="flex flex-col items-center text-gray-300 w-40 hover:text-white transition duration-300">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mb-2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
+                <a href="https://github.com/minjae5024" target="_blank" class="flex flex-col items-center text-slate-600 w-40 hover:text-[#6D94C5] transition duration-300">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mb-2 text-[#6D94C5]"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
                     <span class="text-sm">GitHub</span>
                 </a>
             </div>
         </section>
     </main>
 
-    <footer class="bg-gray-900 border-t border-gray-700 py-6">
-        <div class="container mx-auto px-6 text-center text-gray-500">
+    <footer class="bg-white border-t border-slate-200 py-6">
+        <div class="container mx-auto px-6 text-center text-slate-500">
             <p>&copy; 2025 Lee Minjae. All Rights Reserved.</p>
         </div>
     </footer>
