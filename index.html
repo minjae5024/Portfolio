@@ -166,15 +166,14 @@
                     <div class="bg-[#F5EFE6] rounded-xl shadow-lg overflow-hidden transform hover:-translate-y-2 transition-transform duration-300 flex flex-col">
                         <div class="p-8 flex flex-col flex-grow">
                             <div>
-                                <h3 class="text-2xl font-bold text-slate-800 mb-2">농산물 가격 조회 및 커뮤니티</h3>
+                                <h3 class="text-2xl font-bold text-slate-800 mb-2">농축수산물 가격 조회 / 커뮤니티</h3>
                                  <p class="text-slate-600 mb-6">
-                                    공공데이터 API를 활용하여 전국의 농산물 도매 가격 정보를 조회하고, 사용자들끼리 소통할 수 있는 커뮤니티 서비스입니다.
+                                    공공데이터 API를 활용하여 전국의 농축수산물 도매 가격 정보를 조회하고, 사용자들끼리 소통할 수 있는 커뮤니티 서비스입니다.
                                 </p>
                                 <div class="mb-6">
                                     <h4 class="font-semibold text-slate-800 mb-2">주요 기능</h4>
                                     <ul class="list-disc list-inside text-slate-600 space-y-1">
-                                        <li>공공데이터 API 연동 및 데이터베이스 저장</li>
-                                        <li>지도 API 기반 시장 선택 및 가격 조회</li>
+                                        <li>공공데이터 API 기반 농축산물 도매 가격 조회</li>
                                         <li>시장별 사용자 커뮤니티 게시판 (CRUD)</li>
                                         <li>조건 동적 검색 기능(QueryDSL)</li>
                                     </ul>
@@ -188,6 +187,7 @@
                                         <span class="bg-slate-200 text-slate-700 text-xs font-medium px-2.5 py-0.5 rounded-full">Spring Boot</span>
                                         <span class="bg-slate-200 text-slate-700 text-xs font-medium px-2.5 py-0.5 rounded-full">JPA</span>
                                         <span class="bg-slate-200 text-slate-700 text-xs font-medium px-2.5 py-0.5 rounded-full">QueryDSL</span>
+                                        <span class="bg-slate-200 text-slate-700 text-xs font-medium px-2.5 py-0.5 rounded-full">Redis</span>
                                         <span class="bg-slate-200 text-slate-700 text-xs font-medium px-2.5 py-0.5 rounded-full">MySQL</span>
                                         <span class="bg-slate-200 text-slate-700 text-xs font-medium px-2.5 py-0.5 rounded-full">AWS EC2/RDS</span>
                                         <span class="bg-slate-200 text-slate-700 text-xs font-medium px-2.5 py-0.5 rounded-full">GitHub Actions</span>
@@ -195,9 +195,10 @@
                                 </div>
                                 <div class="bg-[#CBDCEB]/50 p-4 rounded-lg">
                                     <ul class="list-disc list-inside text-slate-600 space-y-1 text-sm">
-                                        <li><b>데이터베이스 최적화</b> : 게시글 조회 시 발생한 N+1 문제를 발견하고 Fetch Join을 적용하여 API 응답 속도를 개선했으며 users테이블에 인덱스를 적용했습니다.</li>
+                                        <li><b>데이터베이스 최적화</b> : 게시글 조회 시 발생한 N+1 문제에 Fetch Join을 적용하고 users테이블에 인덱스를 추가해 응답 속도를 개선했습니다.</li>
+                                        <li><b>캐시</b> : 도매 가격 API 응답을 Redis에 캐싱하여 동일 데이터 조회 시 응답속도를 개선했습니다.</li>
                                         <li><b>민감정보 관리</b> : 외부 API키, JWT 시크릿 키 등의 민감정보를 GitHub Secrets와 환경변수를 이용해 외부로 분리했습니다.</li>
-                                        <li><b>CI/CD</b> : GitHub Actions를 활용해 테스트, 빌드, 배포 자동화(CI/CD) 파이프라인을 구축했습니다.</li>
+                                        <li><b>CI/CD</b> : GitHub Actions를 활용해 테스트, 빌드, 배포 과정을 자동화했습니다.</li>
                                     </ul>
                                 </div>
                                 <div class="mt-8 flex gap-4">
@@ -210,17 +211,16 @@
                     <div class="bg-[#F5EFE6] rounded-xl shadow-lg overflow-hidden transform hover:-translate-y-2 transition-transform duration-300 flex flex-col">
                         <div class="p-8 flex flex-col flex-grow">
                             <div>
-                                <h3 class="text-2xl font-bold text-slate-800 mb-2">이커머스 API 서버</h3>
+                                <h3 class="text-2xl font-bold text-slate-800 mb-2">이커머스 API</h3>
                                 <p class="text-slate-600 mb-6">
-                                    사용자 인증, 상품 관리, 장바구니, 주문, 결제 등 실제 서비스의 확장성과 안정성을 목표로 설계한 이커머스 API 서버입니다.
+                                    사용자 인증, 상품 관리, 장바구니, 주문, 결제 등 이커머스 서비스의 핵심 기능을 구현한 이커머스 API 입니다.
                                 </p>
                                 <div class="mb-6">
                                     <h4 class="font-semibold text-slate-800 mb-2">주요 기능</h4>
                                     <ul class="list-disc list-inside text-slate-600 space-y-1">
-                                        <li>동시성 제어를 적용한 재고 관리 시스템</li>
-                                        <li>JWT & Spring Security 기반 인증/인가</li>
+                                        <li>상품 관리, 장바구니, 주문, 내부 결제 서비스</li>
+                                        <li>JWT 기반 인증</li>
                                         <li>관리자(Admin) 권한 분리를 통한 상품 관리</li>
-                                        <li>사용자별 장바구니 및 주문/결제 기능 구현</li>
                                     </ul>
                                 </div>
                             </div>
@@ -240,7 +240,7 @@
                                     <ul class="list-disc list-inside text-slate-600 space-y-1 text-sm">
                                         <li><b>동시성 제어</b> : 다수의 동시 주문 상황에서 발생할 수 있는 재고 데이터의 불일치 문제를 해결하기 위해 비관적 락(Pessimistic Lock)을 적용했습니다.</li>
                                         <li><b>데이터 무결성</b> : `@Transactional`을 적용하여 주문/결제 프로세스에서 데이터의 일관성을 보장했습니다.</li>
-                                        <li><b>CI/CD</b> : GitHub Actions를 활용해 테스트, 빌드, 배포 자동화(CI/CD) 파이프라인을 구축했습니다</li>
+                                        <li><b>CI/CD</b> : GitHub Actions를 활용해 테스트, 빌드, 배포 과정을 자동화했습니다.</li>
                                     </ul>
                                 </div>
                                 <div class="mt-8 flex gap-4">
