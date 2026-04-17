@@ -189,14 +189,14 @@
                             <div>
                                 <h3 class="text-2xl font-bold text-slate-800 mb-2">Kaggle AI 경진대회 (SSAFY 15-2)</h3>
                                  <p class="text-slate-600 mb-6">
-                                    주어진 데이터를 분석하여 타겟 변수를 예측하는 머신러닝 챌린지로, 데이터 기반 가설 수립 및 모델 최적화 과정을 수행했습니다.
+                                    이미지와 텍스트가 혼합된 질의응답(VQA) 데이터를 분석하여 정답을 예측하는 모델을 최적화하고 리더보드 성능을 향상시킨 챌린지입니다.
                                 </p>
                                 <div class="mb-6">
                                     <h4 class="font-semibold text-slate-800 mb-2">주요 경험</h4>
                                     <ul class="list-disc list-inside text-slate-600 space-y-1 text-sm">
-                                        <li>데이터 탐색(EDA) 및 결측치 처리 등 데이터 전처리</li>
-                                        <li>가설 수립 기반의 파생 변수(Feature) 분석 및 설계</li>
-                                        <li>하이퍼파라미터 튜닝 및 앙상블(Ensemble) 기법 적용</li>
+                                        <li>QLoRA 기반 8B VLM 모델 파인튜닝(PEFT)</li>
+                                        <li>언어 편향 분석 및 Hard Negative Mining 증강</li>
+                                        <li>Dynamic Hinting 및 다수결 앙상블 추론</li>
                                     </ul>
                                 </div>
                             </div>
@@ -205,16 +205,17 @@
                                     <h4 class="font-semibold text-slate-800 mb-2">적용 기술</h4>
                                     <div class="flex flex-wrap gap-2">
                                         <span class="bg-slate-200 text-slate-700 text-xs font-medium px-2.5 py-0.5 rounded-full">Python</span>
-                                        <span class="bg-slate-200 text-slate-700 text-xs font-medium px-2.5 py-0.5 rounded-full">Pandas/NumPy</span>
-                                        <span class="bg-slate-200 text-slate-700 text-xs font-medium px-2.5 py-0.5 rounded-full">Scikit-learn</span>
-                                        <span class="bg-slate-200 text-slate-700 text-xs font-medium px-2.5 py-0.5 rounded-full">XGBoost / LightGBM</span>
+                                        <span class="bg-slate-200 text-slate-700 text-xs font-medium px-2.5 py-0.5 rounded-full">PyTorch</span>
+                                        <span class="bg-slate-200 text-slate-700 text-xs font-medium px-2.5 py-0.5 rounded-full">Hugging Face</span>
+                                        <span class="bg-slate-200 text-slate-700 text-xs font-medium px-2.5 py-0.5 rounded-full">PEFT</span>
+                                        <span class="bg-slate-200 text-slate-700 text-xs font-medium px-2.5 py-0.5 rounded-full">BitsAndBytes</span>
                                     </div>
                                 </div>
                                 <div class="bg-[#CBDCEB]/50 p-4 rounded-lg">
                                     <ul class="list-disc list-inside text-slate-600 space-y-1 text-xs">
-                                        <li><b>데이터 분석</b> : 데이터의 분포를 파악하고 학습 효율을 높이기 위한 정교한 전처리를 주도했습니다.</li>
-                                        <li><b>성능 최적화</b> : 단일 모델의 한계를 극복하고자 여러 알고리즘을 결합하는 앙상블 모델링을 통해 예측 정확도를 높이고 리더보드 점수를 지속해서 개선했습니다.</li>
-                                        <li><b>의사결정</b> : 직관이 아닌 데이터를 기반으로 가설을 세우고, 실제 성능 지표의 변화를 교차 검증(CV)하며 최적의 균형점을 도출했습니다.</li>
+                                        <li><b>QLoRA 파인튜닝</b> : 16GB VRAM 한계 극복을 위해 4-bit 양자화 및 QLoRA를 적용하고, Gradient Accumulation으로 학습 안정성을 확보했습니다.</li>
+                                        <li><b>데이터 파이프라인</b> : 텍스트로 정답을 유추하는 편향을 Hard Negative Mining으로 제어하고 맞춤형 이미지 증강을 구축했습니다.</li>
+                                        <li><b>추론 최적화</b> : 다수결 앙상블(Majority Vote) 기법과 동적 힌트 프롬프트로 환각(Hallucination)을 제어하여 예측 정확도를 향상시켰습니다.</li>
                                     </ul>
                                 </div>
                                 <div class="mt-8 flex gap-4">
