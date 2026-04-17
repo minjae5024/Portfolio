@@ -133,6 +133,7 @@
                                         <div class="flex flex-col">
                                             <span class="font-medium text-slate-700">삼성청년SW·AI아카데미(SSAFY)</span>
                                             <span class="text-sm text-slate-500">2026/1 ~</span>
+                                            <span class="text-sm text-[#6D94C5] font-medium mt-1">✓ AI 강의 · 실습 약 200시간 포함</span>
                                         </div>
                                     </li>
                                 </ul>
@@ -180,8 +181,49 @@
         <section id="projects" class="section bg-custom-secondary py-20 md:py-24">
             <div class="container mx-auto px-6">
                 <h2 class="text-3xl md:text-4xl font-bold text-slate-800 text-center mb-12">PROJECTS</h2>
-                <div class="max-w-5xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-10">
+                <!-- 가로 공간을 넓히고 (max-w-7xl) lg 사이즈에서 3열(lg:grid-cols-3)로 설정하여 한 줄에 표시 -->
+                <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-3 gap-8">
                     
+                    <div class="bg-[#F5EFE6] rounded-xl shadow-lg overflow-hidden transform hover:-translate-y-2 transition-transform duration-300 flex flex-col">
+                        <div class="p-8 flex flex-col flex-grow">
+                            <div>
+                                <h3 class="text-2xl font-bold text-slate-800 mb-2">Kaggle AI 경진대회 (SSAFY 15-2)</h3>
+                                 <p class="text-slate-600 mb-6">
+                                    주어진 데이터를 분석하여 타겟 변수를 예측하는 머신러닝 챌린지로, 데이터 기반 가설 수립 및 모델 최적화 과정을 수행했습니다.
+                                </p>
+                                <div class="mb-6">
+                                    <h4 class="font-semibold text-slate-800 mb-2">주요 경험</h4>
+                                    <ul class="list-disc list-inside text-slate-600 space-y-1 text-sm">
+                                        <li>데이터 탐색(EDA) 및 결측치 처리 등 데이터 전처리</li>
+                                        <li>가설 수립 기반의 파생 변수(Feature) 분석 및 설계</li>
+                                        <li>하이퍼파라미터 튜닝 및 앙상블(Ensemble) 기법 적용</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="mt-auto pt-6">
+                                <div class="mb-6">
+                                    <h4 class="font-semibold text-slate-800 mb-2">적용 기술</h4>
+                                    <div class="flex flex-wrap gap-2">
+                                        <span class="bg-slate-200 text-slate-700 text-xs font-medium px-2.5 py-0.5 rounded-full">Python</span>
+                                        <span class="bg-slate-200 text-slate-700 text-xs font-medium px-2.5 py-0.5 rounded-full">Pandas/NumPy</span>
+                                        <span class="bg-slate-200 text-slate-700 text-xs font-medium px-2.5 py-0.5 rounded-full">Scikit-learn</span>
+                                        <span class="bg-slate-200 text-slate-700 text-xs font-medium px-2.5 py-0.5 rounded-full">XGBoost / LightGBM</span>
+                                    </div>
+                                </div>
+                                <div class="bg-[#CBDCEB]/50 p-4 rounded-lg">
+                                    <ul class="list-disc list-inside text-slate-600 space-y-1 text-xs">
+                                        <li><b>데이터 분석</b> : 데이터의 분포를 파악하고 학습 효율을 높이기 위한 정교한 전처리를 주도했습니다.</li>
+                                        <li><b>성능 최적화</b> : 단일 모델의 한계를 극복하고자 여러 알고리즘을 결합하는 앙상블 모델링을 통해 예측 정확도를 높이고 리더보드 점수를 지속해서 개선했습니다.</li>
+                                        <li><b>의사결정</b> : 직관이 아닌 데이터를 기반으로 가설을 세우고, 실제 성능 지표의 변화를 교차 검증(CV)하며 최적의 균형점을 도출했습니다.</li>
+                                    </ul>
+                                </div>
+                                <div class="mt-8 flex gap-4">
+                                    <a href="https://www.kaggle.com/competitions/2026-ssafy-ai-15-2" target="_blank" class="w-full text-center bg-custom-accent text-white font-semibold py-2 px-4 rounded-lg hover:bg-custom-accent-dark transition duration-300">Kaggle Competition Link</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
                     <div class="bg-[#F5EFE6] rounded-xl shadow-lg overflow-hidden transform hover:-translate-y-2 transition-transform duration-300 flex flex-col">
                         <div class="p-8 flex flex-col flex-grow">
                             <div>
@@ -191,7 +233,7 @@
                                 </p>
                                 <div class="mb-6">
                                     <h4 class="font-semibold text-slate-800 mb-2">주요 기능</h4>
-                                    <ul class="list-disc list-inside text-slate-600 space-y-1">
+                                    <ul class="list-disc list-inside text-slate-600 space-y-1 text-sm">
                                         <li>공공데이터 API 기반 농축산물 도매 가격 조회</li>
                                         <li>시장별 사용자 커뮤니티 게시판 (CRUD)</li>
                                         <li>조건 동적 검색 기능(QueryDSL)</li>
@@ -213,7 +255,7 @@
                                     </div>
                                 </div>
                                 <div class="bg-[#CBDCEB]/50 p-4 rounded-lg">
-                                    <ul class="list-disc list-inside text-slate-600 space-y-1 text-sm">
+                                    <ul class="list-disc list-inside text-slate-600 space-y-1 text-xs">
                                         <li><b>데이터베이스 최적화</b> : 게시글 조회 시 발생한 N+1 문제에 Fetch Join을 적용하고 users테이블에 인덱스를 추가해 응답 속도를 개선했습니다.</li>
                                         <li><b>캐시</b> : 도매 가격 API 응답을 Redis에 캐싱하여 동일 데이터 조회 시 응답속도를 개선했습니다.</li>
                                         <li><b>민감정보 관리</b> : 외부 API키, JWT 시크릿 키 등의 민감정보를 GitHub Secrets와 환경변수를 이용해 외부로 분리했습니다.</li>
@@ -236,7 +278,7 @@
                                 </p>
                                 <div class="mb-6">
                                     <h4 class="font-semibold text-slate-800 mb-2">주요 기능</h4>
-                                    <ul class="list-disc list-inside text-slate-600 space-y-1">
+                                    <ul class="list-disc list-inside text-slate-600 space-y-1 text-sm">
                                         <li>상품 관리, 장바구니, 주문, 내부 결제 서비스</li>
                                         <li>JWT 기반 인증</li>
                                         <li>관리자(Admin) 권한 분리를 통한 상품 관리</li>
@@ -256,7 +298,7 @@
                                     </div>
                                 </div>
                                 <div class="bg-[#CBDCEB]/50 p-4 rounded-lg">
-                                    <ul class="list-disc list-inside text-slate-600 space-y-1 text-sm">
+                                    <ul class="list-disc list-inside text-slate-600 space-y-1 text-xs">
                                         <li><b>동시성 제어</b> : 다수의 동시 주문 상황에서 발생할 수 있는 재고 데이터의 불일치 문제를 해결하기 위해 비관적 락(Pessimistic Lock)을 적용했습니다.</li>
                                         <li><b>데이터 무결성</b> : `@Transactional`을 적용하여 주문/결제 프로세스에서 데이터의 일관성을 보장했습니다.</li>
                                         <li><b>CI/CD</b> : GitHub Actions를 활용해 테스트, 빌드, 배포 과정을 자동화했습니다.</li>
