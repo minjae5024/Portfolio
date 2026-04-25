@@ -5,6 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>백엔드 개발자 이민재 포트폴리오</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <!-- 추가: Mermaid.js 라이브러리 로드 -->
+    <script src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>
+    <script>mermaid.initialize({startOnLoad:true});</script>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Noto+Sans+KR:wght@400;500;700&display=swap">
     <style>
         body {
@@ -132,7 +135,8 @@
                                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-5 h-5 mr-3 text-custom-accent mt-1 flex-shrink-0"><path d="M22 10v6M2 10l10-5 10 5-10 5z"></path><path d="M6 12v5c3 3 9 3 12 0v-5"></path></svg>
                                         <div class="flex flex-col">
                                             <span class="font-medium text-slate-700">삼성청년SW·AI아카데미(SSAFY)</span>
-                                            <span class="text-sm text-slate-500">2026/1 ~</span>
+                                            <!-- 수정: 교육 기간 업데이트 -->
+                                            <span class="text-sm text-slate-500">2026.01 ~ (교육 진행 중)</span>
                                         </div>
                                     </li>
                                 </ul>
@@ -197,6 +201,50 @@
                                         <li>조건 동적 검색 기능(QueryDSL)</li>
                                     </ul>
                                 </div>
+
+                                <!-- 추가: 아키텍처 다이어그램 공간 -->
+                                <div class="mb-6">
+                                    <h4 class="font-semibold text-slate-800 mb-2">시스템 아키텍처</h4>
+                                    <div class="w-full bg-white rounded-lg p-4 flex items-center justify-center border border-slate-200 shadow-sm overflow-x-auto">
+                                        <div class="mermaid">
+graph TD
+    %% 스타일 정의
+    classDef client fill:#f3f4f6,stroke:#9ca3af,stroke-width:2px,color:#1f2937
+    classDef ext fill:#fff7ed,stroke:#fdba74,stroke-width:2px,color:#9a3412
+    classDef ci fill:#f8fafc,stroke:#cbd5e1,stroke-width:2px,color:#334155
+    classDef spring fill:#dcfce7,stroke:#22c55e,stroke-width:2px,color:#166534
+    classDef db fill:#dbeafe,stroke:#3b82f6,stroke-width:2px,color:#1e40af
+    classDef redis fill:#fee2e2,stroke:#ef4444,stroke-width:2px,color:#991b1b
+    classDef vpn fill:#f8fafc,stroke:#94a3b8,stroke-width:2px,stroke-dasharray: 5 5
+
+    Client((클라이언트)):::client
+
+    subgraph "CI/CD 파이프라인"
+        GH[GitHub Actions]:::ci
+    end
+
+    subgraph "외부 서비스"
+        DataAPI[공공데이터포털]:::ext
+    end
+
+    subgraph "홈 서버"
+        direction TB
+        subgraph "Tailscale VPN"
+            WAS["서버"]:::spring
+            Redis[("Redis")]:::redis
+            MySQL[("MySQL")]:::db
+            
+            WAS <-->|읽기 / 쓰기| MySQL
+            WAS <-->|데이터 캐싱| Redis
+        end
+    end
+
+    Client -->|HTTP 요청| WAS
+    WAS -->|데이터 조회| DataAPI
+    GH -.->|빌드 / 배포| WAS
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                             <div class="mt-auto pt-6">
                                 <div class="mb-6">
@@ -215,13 +263,21 @@
                                 <div class="bg-[#CBDCEB]/50 p-4 rounded-lg">
                                     <ul class="list-disc list-inside text-slate-600 space-y-1 text-sm">
                                         <li><b>데이터베이스 최적화</b> : 게시글 조회 시 발생한 N+1 문제에 Fetch Join을 적용하고 users테이블에 인덱스를 추가해 응답 속도를 개선했습니다.</li>
-                                        <li><b>캐시</b> : 도매 가격 API 응답을 Redis에 캐싱하여 동일 데이터 조회 시 응답속도를 개선했습니다.</li>
+                                        <li><b>캐싱 도입</b> : 도매 가격 API 응답을 Redis에 캐싱하여 동일 데이터 조회 시 응답속도를 개선했습니다.</li>
                                         <li><b>민감정보 관리</b> : 외부 API키, JWT 시크릿 키 등의 민감정보를 GitHub Secrets와 환경변수를 이용해 외부로 분리했습니다.</li>
-                                        <li><b>CI/CD</b> : GitHub Actions를 활용해 테스트, 빌드, 배포 과정을 자동화했습니다.</li>
+                                        <li><b>인프라 및 보안 개선</b> : 클라우드 유지 비용 절감을 위해 기존 AWS EC2 환경에서 온프레미스(홈 서버) 환경으로 인프라를 마이그레이션했습니다. 또한, 포트 개방으로 인한 보안 취약점을 방지하고자 Tailscale VPN을 도입하여 Zero Trust 안전망을 구축했습니다.</li>
                                     </ul>
                                 </div>
-                                <div class="mt-8 flex gap-4">
-                                    <a href="https://github.com/minjae5024/marketPrice" target="_blank" class="w-full text-center bg-custom-accent text-white font-semibold py-2 px-4 rounded-lg hover:bg-custom-accent-dark transition duration-300">GitHub Repository</a>
+                                
+                                <!-- 추가: 버튼 그룹 (GitHub, API Docs) -->
+                                <div class="mt-8 flex gap-3">
+                                    <a href="https://github.com/minjae5024/marketPrice" target="_blank" class="flex-1 text-center bg-custom-accent text-white font-semibold py-2 px-4 rounded-lg hover:bg-custom-accent-dark transition duration-300 shadow-sm">
+                                        GitHub
+                                    </a>
+                                    <!-- href 속성에 실제 API Docs URL을 넣어주세요 -->
+                                    <a href="https://marketprice.minjae5024.store/swagger-ui/index.html" target="_blank" class="flex-1 text-center bg-white text-custom-accent border border-custom-accent font-semibold py-2 px-4 rounded-lg hover:bg-slate-50 transition duration-300 shadow-sm">
+                                        API Docs
+                                    </a>
                                 </div>
                             </div>
                         </div>
@@ -241,6 +297,41 @@
                                         <li>JWT 기반 인증</li>
                                         <li>관리자(Admin) 권한 분리를 통한 상품 관리</li>
                                     </ul>
+                                </div>
+
+                                <!-- 추가: 아키텍처 다이어그램 공간 -->
+                                <div class="mb-6">
+                                    <h4 class="font-semibold text-slate-800 mb-2">시스템 아키텍처</h4>
+                                    <div class="w-full bg-white rounded-lg p-4 flex items-center justify-center border border-slate-200 shadow-sm overflow-x-auto">
+                                        <div class="mermaid">
+graph TD
+    %% 스타일 정의
+    classDef client fill:#f3f4f6,stroke:#9ca3af,stroke-width:2px,color:#1f2937
+    classDef ci fill:#f8fafc,stroke:#cbd5e1,stroke-width:2px,color:#334155
+    classDef spring fill:#dcfce7,stroke:#22c55e,stroke-width:2px,color:#166534
+    classDef db fill:#dbeafe,stroke:#3b82f6,stroke-width:2px,color:#1e40af
+    classDef vpn fill:#f8fafc,stroke:#94a3b8,stroke-width:2px,stroke-dasharray: 5 5
+
+    Client((클라이언트)):::client
+
+    subgraph "CI/CD 파이프라인"
+        GH[GitHub Actions]:::ci
+    end
+
+    subgraph "홈 서버"
+        direction TB
+        subgraph "Tailscale VPN"
+            WAS["서버"]:::spring
+            MySQL[("MySQL")]:::db
+            
+            WAS <-->|읽기 / 쓰기<br/>| MySQL
+        end
+    end
+
+    Client -->|HTTP 요청<br/>| WAS
+    GH -.->|빌드 / 배포| WAS
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                              <div class="mt-auto pt-6">
@@ -262,8 +353,16 @@
                                         <li><b>CI/CD</b> : GitHub Actions를 활용해 테스트, 빌드, 배포 과정을 자동화했습니다.</li>
                                     </ul>
                                 </div>
-                                <div class="mt-8 flex gap-4">
-                                    <a href="https://github.com/minjae5024/E-Commerce" target="_blank" class="w-full text-center bg-custom-accent text-white font-semibold py-2 px-4 rounded-lg hover:bg-custom-accent-dark transition duration-300">GitHub Repository</a>
+                                
+                                <!-- 추가: 버튼 그룹 (GitHub, API Docs) -->
+                                <div class="mt-8 flex gap-3">
+                                    <a href="https://github.com/minjae5024/E-Commerce" target="_blank" class="flex-1 text-center bg-custom-accent text-white font-semibold py-2 px-4 rounded-lg hover:bg-custom-accent-dark transition duration-300 shadow-sm">
+                                        GitHub
+                                    </a>
+                                    <!-- href 속성에 실제 API Docs URL을 넣어주세요 -->
+                                    <a href="https://ecommerce.minjae5024.store/swagger-ui/index.html" target="_blank" class="flex-1 text-center bg-white text-custom-accent border border-custom-accent font-semibold py-2 px-4 rounded-lg hover:bg-slate-50 transition duration-300 shadow-sm">
+                                        API Docs
+                                    </a>
                                 </div>
                             </div>
                         </div>
