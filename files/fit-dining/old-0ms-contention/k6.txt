@@ -1,0 +1,56 @@
+time="2026-11-19T02:14:56Z" level=warning msg="Request Failed" error="Patch \"http://host.docker.internal:8080/api/v1/reviews/5\": dial: i/o timeout"
+time="2026-11-19T02:14:56Z" level=warning msg="Request Failed" error="Patch \"http://host.docker.internal:8080/api/v1/reviews/12\": dial: i/o timeout"
+
+
+  █ THRESHOLDS 
+
+    http_req_duration{name:list}
+    ✓ 'max>=0' max=2.35s
+
+    http_req_duration{name:patch}
+    ✓ 'max>=0' max=1.85s
+
+    http_req_failed{name:list}
+    ✓ 'rate>=0' rate=0.00%
+
+    http_req_failed{name:patch}
+    ✓ 'rate>=0' rate=0.04%
+
+
+  █ TOTAL RESULTS 
+
+    checks_total.......: 22812  278.709711/s
+    checks_succeeded...: 99.99% 22810 out of 22812
+    checks_failed......: 0.00%  2 out of 22812
+
+    ✓ login 200
+    ✓ create 201
+    ✓ list 200
+    ✓ upload-urls 2xx
+    ✓ put 200
+    ✗ patch 204
+      ↳  99% — ✓ 4719 / ✗ 2
+
+    HTTP
+    http_req_duration..............: avg=104.29ms min=0s       med=45.01ms  max=2.35s  p(90)=271.27ms p(95)=398.32ms p(99)=747.34ms
+      { expected_response:true }...: avg=104.3ms  min=475.84µs med=45.02ms  max=2.35s  p(90)=271.28ms p(95)=398.34ms p(99)=747.4ms 
+      { name:list }................: avg=307.16ms min=29.61ms  med=258.04ms max=2.35s  p(90)=563.21ms p(95)=710.97ms p(99)=1.48s   
+      { name:patch }...............: avg=165.5ms  min=0s       med=136.85ms max=1.85s  p(90)=245.2ms  p(95)=319.99ms p(99)=606.7ms 
+    http_req_failed................: 0.00%  2 out of 22812
+      { name:list }................: 0.00%  0 out of 3907
+      { name:patch }...............: 0.04%  2 out of 4721
+    http_reqs......................: 22812  278.709711/s
+
+    EXECUTION
+    iteration_duration.............: avg=283.37ms min=29.8ms   med=217.1ms  max=30.05s p(90)=473.79ms p(95)=620.7ms  p(99)=1.18s   
+    iterations.....................: 8628   105.414141/s
+    vus............................: 2      min=2          max=40
+    vus_max........................: 40     min=40         max=40
+
+    NETWORK
+    data_received..................: 7.2 MB 87 kB/s
+    data_sent......................: 11 MB  129 kB/s
+
+
+
+k6 exit=0

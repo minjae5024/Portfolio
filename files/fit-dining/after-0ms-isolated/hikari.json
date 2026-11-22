@@ -1,0 +1,38 @@
+{
+  "start": {
+    "usage_count": 9.0,
+    "usage_sum": 0.19,
+    "usage_max": 0.09,
+    "acquire_sum": 0.003894699,
+    "acquire_count": 7.0,
+    "acquire_max": 0.002243199,
+    "timeout": 0.0,
+    "active": 0.0,
+    "pending": 0.0
+  },
+  "end": {
+    "usage_count": 60.0,
+    "usage_sum": 0.636,
+    "usage_max": 0.09,
+    "acquire_sum": 0.005821095,
+    "acquire_count": 60.0,
+    "acquire_max": 0.002243199,
+    "timeout": 0.0,
+    "active": 0.0,
+    "pending": 0.0
+  },
+  "diff": {
+    "usage_count": 51.0,
+    "usage_sum": 0.446,
+    "acquire_count": 53.0,
+    "acquire_sum": 0.001926396,
+    "timeout": 0.0
+  },
+  "peak": {
+    "active": 1.0,
+    "pending": 0.0,
+    "acquire_max": 0.002243199,
+    "usage_max": 0.09
+  },
+  "samples": 16
+}

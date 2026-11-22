@@ -1,0 +1,53 @@
+
+
+  █ THRESHOLDS 
+
+    http_req_duration{name:list}
+    ✓ 'max>=0' max=521.18ms
+
+    http_req_duration{name:patch}
+    ✓ 'max>=0' max=3.73s
+
+    http_req_failed{name:list}
+    ✓ 'rate>=0' rate=0.00%
+
+    http_req_failed{name:patch}
+    ✓ 'rate>=0' rate=0.00%
+
+
+  █ TOTAL RESULTS 
+
+    checks_total.......: 37183   612.358691/s
+    checks_succeeded...: 100.00% 37183 out of 37183
+    checks_failed......: 0.00%   0 out of 37183
+
+    ✓ login 200
+    ✓ create 201
+    ✓ list 200
+    ✓ upload-urls 2xx
+    ✓ put 200
+    ✓ patch 204
+
+    HTTP
+    http_req_duration..............: avg=64.3ms   min=555.76µs med=40.8ms   max=3.73s    p(90)=153.62ms p(95)=187.25ms p(99)=279.04ms
+      { expected_response:true }...: avg=64.3ms   min=555.76µs med=40.8ms   max=3.73s    p(90)=153.62ms p(95)=187.25ms p(99)=279.04ms
+      { name:list }................: avg=75.1ms   min=15.77ms  med=65.09ms  max=521.18ms p(90)=126.03ms p(95)=154.1ms  p(99)=233.35ms
+      { name:patch }...............: avg=183.12ms min=81.34ms  med=157.24ms max=3.73s    p(90)=232.72ms p(95)=273.58ms p(99)=413.24ms
+    http_req_failed................: 0.00%  0 out of 37183
+      { name:list }................: 0.00%  0 out of 15918
+      { name:patch }...............: 0.00%  0 out of 5311
+    http_reqs......................: 37183  612.358691/s
+
+    EXECUTION
+    iteration_duration.............: avg=113.11ms min=16.26ms  med=82.23ms  max=5.89s    p(90)=212.33ms p(95)=250.04ms p(99)=365.73ms
+    iterations.....................: 21229  349.615756/s
+    vus............................: 40     min=40         max=40
+    vus_max........................: 40     min=40         max=40
+
+    NETWORK
+    data_received..................: 9.6 MB 158 kB/s
+    data_sent......................: 13 MB  216 kB/s
+
+
+
+k6 exit=0

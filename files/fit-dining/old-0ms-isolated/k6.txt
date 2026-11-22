@@ -1,0 +1,56 @@
+
+
+  █ THRESHOLDS 
+
+    http_req_duration{name:list}
+    ✓ 'max>=0' max=0s
+
+    http_req_duration{name:patch}
+    ✓ 'max>=0' max=628.86ms
+
+    http_req_failed{name:list}
+    ✓ 'rate>=0' rate=0.00%
+
+    http_req_failed{name:patch}
+    ✓ 'rate>=0' rate=0.00%
+
+
+  █ TOTAL RESULTS 
+
+    checks_total.......: 42      7.501071/s
+    checks_succeeded...: 100.00% 42 out of 42
+    checks_failed......: 0.00%   0 out of 42
+
+    ✓ login 200
+    ✓ create 201
+    ✓ upload-urls 2xx
+    ✓ put 200
+    ✓ patch 204
+
+    CUSTOM
+    db_checkouts_per_patch.........: avg=1        min=1        med=1        max=1        p(90)=1        p(95)=1        p(99)=1       
+    db_hold_ms_per_patch...........: avg=213.4    min=144      med=175      max=607      p(90)=236.2    p(95)=421.6    p(99)=569.92  
+
+    HTTP
+    http_req_duration..............: avg=89.83ms  min=413.2µs  med=63.65ms  max=1.06s    p(90)=193.77ms p(95)=245.58ms p(99)=799.12ms
+      { expected_response:true }...: avg=89.83ms  min=413.2µs  med=63.65ms  max=1.06s    p(90)=193.77ms p(95)=245.58ms p(99)=799.12ms
+      { name:list }................: avg=0s       min=0s       med=0s       max=0s       p(90)=0s       p(95)=0s       p(99)=0s      
+      { name:patch }...............: avg=221.53ms min=148.69ms med=182.59ms max=628.86ms p(90)=242.52ms p(95)=435.69ms p(99)=590.22ms
+    http_req_failed................: 0.00%  0 out of 62
+      { name:list }................: 0.00%  0 out of 0
+      { name:patch }...............: 0.00%  0 out of 10
+    http_reqs......................: 62     11.07301/s
+
+    EXECUTION
+    iteration_duration.............: avg=452.73ms min=285.97ms med=344.4ms  max=1.3s     p(90)=533.59ms p(95)=920.78ms p(99)=1.23s   
+    iterations.....................: 10     1.785969/s
+    vus............................: 1      min=0       max=1
+    vus_max........................: 1      min=1       max=1
+
+    NETWORK
+    data_received..................: 471 kB 84 kB/s
+    data_sent......................: 24 kB  4.3 kB/s
+
+
+
+k6 exit=0
